@@ -79,6 +79,7 @@ const Home = () => {
         </div>
       </section>
       {/* Default 8 Data */}
+      <Apps></Apps>
     </section>
   );
 };

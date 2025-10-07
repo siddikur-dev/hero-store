@@ -1,19 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useBooks = () => {
-  const [books, setBooks] = useState([]);
+const useApps = () => {
+  const [apps, setApps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
     setLoading(true);
-    axios("../booksData.json")
-      .then((data) => setBooks(data.data))
+    axios("../heroApps.json")
+      .then((data) => setApps(data.data))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   }, []);
 
-  return { books, loading, error };
+  return { apps, loading, error };
 };
 
-export default useBooks;
+export default useApps;

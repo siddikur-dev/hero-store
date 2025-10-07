@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
+import useApps from "../../hooks/useApps";
 
 const Apps = () => {
-    return (
-        <div>
-            <Aps></Aps>
-        </div>
-    );
+  const { apps } = useApps();
+  console.log(apps);
+  return <div>Aps</div>;
 };
 
 export default Apps;
