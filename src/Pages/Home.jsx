@@ -1,11 +1,77 @@
-import React from 'react';
-
+import React from "react";
+import heroImg from "../assets/hero.png";
 const Home = () => {
-    return (
-        <div>
-            Home
+  return (
+    <section className="w-full flex flex-col items-center text-center bg-base-300 ">
+      {/* Top Content */}
+      <div className="max-w-4xl mt-12">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+          We Build <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]">
+            Productive
+          </span>{" "}
+          Apps
+        </h1>
+        <p className="mt-4 text-gray-600 text-sm md:text-base">
+          At <span className="font-semibold">Hero Store</span> we create
+          powerful and innovative apps that make everyday life simpler, smarter,
+          and more inspiring. Our mission is to transform your ideas into
+          digital experiences that truly make an impact.
+        </p>
+
+        {/* Store Buttons */}
+        <div className="flex justify-center gap-3 mt-6 flex-wrap">
+          <button className="btn flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              className="h-6"
+            />
+          </button>
+          <button className="flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg"
+              alt="App Store"
+              className="h-6"
+            />
+          </button>
         </div>
-    );
+      </div>
+
+      {/* Phone Mockup */}
+      <div className="relative mt-12 flex justify-center">
+        <img
+          src={heroImg}
+          alt="App Preview"
+          className="w-[250px] md:w-[300px] lg:w-[440px] object-contain"
+        />
+      </div>
+
+      {/* Stats Section */}
+      <div className=" w-full bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white py-12">
+        <h2 className="hidden lg:block text-3xl font-semibold text-center ">
+          Trusted By Millions, Built For You
+        </h2>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 py-8">
+          <div>
+            <h3 className="text-sm uppercase opacity-80">Total Downloads</h3>
+            <p className="text-3xl md:text-4xl font-bold mt-2">29.6M</p>
+            <p className="text-sm opacity-75 mt-1">21% More Than Last Month</p>
+          </div>
+          <div>
+            <h3 className="text-sm uppercase opacity-80">Total Reviews</h3>
+            <p className="text-3xl md:text-4xl font-bold mt-2">906K</p>
+            <p className="text-sm opacity-75 mt-1">46% More Than Last Month</p>
+          </div>
+          <div>
+            <h3 className="text-sm uppercase opacity-80">Active Apps</h3>
+            <p className="text-3xl md:text-4xl font-bold mt-2">132+</p>
+            <p className="text-sm opacity-75 mt-1">31 More Will Launch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Home;
