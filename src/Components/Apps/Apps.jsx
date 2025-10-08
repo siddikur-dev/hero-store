@@ -8,6 +8,7 @@ import { Link } from "react-router";
 
 const Apps = () => {
   const { apps } = useApps();
+  // Default 8 Apps shown
   const defaultApps = [...apps]
     .sort((a, b) => b.downloads - a.downloads)
     .slice(0, 8);

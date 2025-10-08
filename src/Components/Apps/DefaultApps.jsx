@@ -3,13 +3,19 @@ import { AiFillStar } from "react-icons/ai";
 import { FcRating } from "react-icons/fc";
 import { FiDownload } from "react-icons/fi";
 import { GoDownload } from "react-icons/go";
+import { useNavigate } from "react-router";
 
 const DefaultApps = ({ apps }) => {
-  // const {}
+  //  navigate to details page
+  const navigate = useNavigate();
   //destructure apps object
-  const { downloads, image, title, ratingAvg } = apps;
+  const { downloads, image, title, ratingAvg, id } = apps;
+
   return (
-    <div className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer">
+    <div
+      onClick={() => navigate(`/apps-details/${id}`)}
+      className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
+    >
       {/* Image Section */}
       <div className="w-full aspect-[4/3] bg-gray-300 flex items-center justify-center">
         {image ? (
