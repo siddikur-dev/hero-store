@@ -1,182 +1,380 @@
 [
   {
-    "id": 1,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732228.png",
-    "title": "Google Docs",
-    "companyName": "Google LLC",
-    "description": "Create, edit, and collaborate on documents from anywhere with real-time sync and cloud storage.",
-    "size": 84,
-    "reviews": 5200000,
-    "ratingAvg": 4.3,
-    "downloads": 1000000000,
-    "ratings": [
-      { "name": "1 star", "count": 240000 },
-      { "name": "2 star", "count": 150000 },
-      { "name": "3 star", "count": 500000 },
-      { "name": "4 star", "count": 1500000 },
-      { "name": "5 star", "count": 2810000 }
-    ]
-  },
-  {
-    "id": 2,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732221.png",
-    "title": "Microsoft Word",
-    "companyName": "Microsoft Corporation",
-    "description": "A trusted word processor for writing, editing, and sharing professional documents easily.",
-    "size": 96,
-    "reviews": 4500000,
-    "ratingAvg": 4.5,
-    "downloads": 1000000000,
-    "ratings": [
-      { "name": "1 star", "count": 120000 },
-      { "name": "2 star", "count": 100000 },
-      { "name": "3 star", "count": 350000 },
-      { "name": "4 star", "count": 1200000 },
-      { "name": "5 star", "count": 2730000 }
-    ]
-  },
-  {
-    "id": 3,
-    "image": "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-    "title": "Spotify",
-    "companyName": "Spotify AB",
-    "description": "Stream millions of songs and podcasts for free, and discover new music you’ll love.",
-    "size": 68,
-    "reviews": 27000000,
-    "ratingAvg": 4.4,
-    "downloads": 1000000000,
-    "ratings": [
-      { "name": "1 star", "count": 700000 },
-      { "name": "2 star", "count": 300000 },
-      { "name": "3 star", "count": 900000 },
-      { "name": "4 star", "count": 5000000 },
-      { "name": "5 star", "count": 20100000 }
-    ]
-  },
-  {
-    "id": 4,
-    "image": "https://cdn-icons-png.flaticon.com/512/888/888879.png",
-    "title": "Instagram",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg",
+    "title": "Facebook",
     "companyName": "Meta Platforms, Inc.",
-    "description": "Share photos, reels, and stories with friends. Explore content from around the world.",
-    "size": 122,
-    "reviews": 145000000,
-    "ratingAvg": 4.1,
-    "downloads": 5000000000,
-    "ratings": [
-      { "name": "1 star", "count": 9500000 },
-      { "name": "2 star", "count": 6000000 },
-      { "name": "3 star", "count": 11000000 },
-      { "name": "4 star", "count": 35000000 },
-      { "name": "5 star", "count": 85000000 }
-    ]
-  },
-  {
-    "id": 5,
-    "image": "https://cdn-icons-png.flaticon.com/512/2111/2111468.png",
-    "title": "Twitter (X)",
-    "companyName": "X Corp.",
-    "description": "Stay informed with live updates, trending news, and conversations around the world.",
-    "size": 85,
-    "reviews": 18000000,
+    "id": 1,
+    "description": "Facebook is a social media platform that allows users to connect with friends and share content.",
+    "size": 275,
+    "reviews": 2200,
     "ratingAvg": 4.2,
     "downloads": 1000000000,
     "ratings": [
-      { "name": "1 star", "count": 1500000 },
-      { "name": "2 star", "count": 1000000 },
-      { "name": "3 star", "count": 2500000 },
-      { "name": "4 star", "count": 5000000 },
-      { "name": "5 star", "count": 8000000 }
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 550 }
     ]
   },
   {
-    "id": 6,
-    "image": "https://cdn-icons-png.flaticon.com/512/300/300221.png",
-    "title": "Zoom",
-    "companyName": "Zoom Video Communications, Inc.",
-    "description": "Meet, chat, and collaborate securely with high-quality video and audio anywhere.",
-    "size": 58,
-    "reviews": 10500000,
-    "ratingAvg": 4.5,
-    "downloads": 1000000000,
-    "ratings": [
-      { "name": "1 star", "count": 700000 },
-      { "name": "2 star", "count": 300000 },
-      { "name": "3 star", "count": 800000 },
-      { "name": "4 star", "count": 2500000 },
-      { "name": "5 star", "count": 6200000 }
-    ]
-  },
-  {
-    "id": 7,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732076.png",
-    "title": "YouTube",
-    "companyName": "Google LLC",
-    "description": "Watch, create, and share videos with the world’s biggest online video community.",
-    "size": 120,
-    "reviews": 155000000,
-    "ratingAvg": 4.5,
-    "downloads": 10000000000,
-    "ratings": [
-      { "name": "1 star", "count": 12000000 },
-      { "name": "2 star", "count": 8000000 },
-      { "name": "3 star", "count": 16000000 },
-      { "name": "4 star", "count": 40000000 },
-      { "name": "5 star", "count": 79000000 }
-    ]
-  },
-  {
-    "id": 8,
-    "image": "https://cdn-icons-png.flaticon.com/512/888/888846.png",
-    "title": "Facebook",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
+    "title": "WhatsApp",
     "companyName": "Meta Platforms, Inc.",
-    "description": "Connect with friends and communities, share photos, and stay updated with what matters to you.",
-    "size": 112,
-    "reviews": 190000000,
-    "ratingAvg": 4.1,
+    "id": 2,
+    "description": "WhatsApp is a messaging app that allows users to send texts, make voice calls, and share media.",
+    "size": 120,
+    "reviews": 3000,
+    "ratingAvg": 4.5,
     "downloads": 5000000000,
     "ratings": [
-      { "name": "1 star", "count": 17000000 },
-      { "name": "2 star", "count": 9000000 },
-      { "name": "3 star", "count": 22000000 },
-      { "name": "4 star", "count": 47000000 },
-      { "name": "5 star", "count": 96000000 }
+      { "name": "1 star", "count": 80 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1300 },
+      { "name": "5 star", "count": 1100 }
     ]
   },
   {
-    "id": 9,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732200.png",
-    "title": "Google Drive",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    "title": "Instagram",
+    "companyName": "Meta Platforms, Inc.",
+    "id": 3,
+    "description": "Instagram is a photo and video sharing social media platform.",
+    "size": 145,
+    "reviews": 2500,
+    "ratingAvg": 4.6,
+    "downloads": 3000000000,
+    "ratings": [
+      { "name": "1 star", "count": 90 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1200 },
+      { "name": "5 star", "count": 760 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg",
+    "title": "Twitter",
+    "companyName": "X Corp.",
+    "id": 4,
+    "description": "Twitter is a microblogging and social networking service for news and communication.",
+    "size": 180,
+    "reviews": 1800,
+    "ratingAvg": 4.1,
+    "downloads": 1200000000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 350 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png",
+    "title": "Youtube",
     "companyName": "Google LLC",
-    "description": "Store, share, and access your files securely from any device with automatic backup.",
-    "size": 80,
-    "reviews": 9000000,
+    "id": 5,
+    "description": "YouTube is a video sharing platform where users can upload, view, and share videos.",
+    "size": 250,
+    "reviews": 4000,
+    "ratingAvg": 4.7,
+    "downloads": "100M",
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 450 },
+      { "name": "4 star", "count": 1200 },
+      { "name": "5 star", "count": 2000 }
+    ]
+  },
+  {
+    "image": "https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-download-logo-30.png",
+    "title": "Spotify",
+    "companyName": "Spotify AB",
+    "id": 6,
+    "description": "Spotify is a digital music service that gives you access to millions of songs and podcasts.",
+    "size": 160,
+    "reviews": 2800,
+    "ratingAvg": 4.6,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 90 },
+      { "name": "2 star", "count": 140 },
+      { "name": "3 star", "count": 350 },
+      { "name": "4 star", "count": 1000 },
+      { "name": "5 star", "count": 1220 }
+    ]
+  },
+  {
+    "image": "https://img.icons8.com/?size=96&id=L1ws9zn2uD01&format=png",
+    "title": "Google Play Store",
+    "companyName": "Google LLC",
+    "id": 7,
+    "description": "Google Play is the official app store for Android devices to download apps, games, and more.",
+    "size": 220,
+    "reviews": 3200,
+    "ratingAvg": 4.5,
+    "downloads": 8000000000,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 250 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 1200 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png",
+    "title": "Gmail",
+    "companyName": "Google LLC",
+    "id": 8,
+    "description": "Gmail is an email service developed by Google for communication and organization.",
+    "size": 190,
+    "reviews": 2100,
+    "ratingAvg": 4.4,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 180 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 720 }
+    ]
+  },
+  {
+    "image": "https://static.vecteezy.com/system/resources/previews/006/057/996/non_2x/tiktok-logo-on-transparent-background-free-vector.jpg",
+    "title": "TikTok",
+    "companyName": "ByteDance Ltd.",
+    "id": 9,
+    "description": "TikTok is a short-form video hosting service where users create and share clips.",
+    "size": 200,
+    "reviews": 5000,
+    "ratingAvg": 4.6,
+    "downloads": 4000000000,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 250 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 1500 },
+      { "name": "5 star", "count": 2550 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Linkedin.svg",
+    "title": "LinkedIn",
+    "companyName": "Microsoft Corporation",
+    "id": 10,
+    "description": "LinkedIn is a professional networking platform for career growth and job opportunities.",
+    "size": 170,
+    "reviews": 1900,
+    "ratingAvg": 4.3,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 160 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 520 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png",
+    "title": "Pinterest",
+    "companyName": "Pinterest, Inc.",
+    "id": 11,
+    "description": "Pinterest is a platform to discover ideas and inspirations for various interests.",
+    "size": 155,
+    "reviews": 1600,
+    "ratingAvg": 4.4,
+    "downloads": 900000000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 510 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+    "title": "Netflix",
+    "companyName": "Netflix, Inc.",
+    "id": 12,
+    "description": "Netflix is a streaming service for movies and TV shows.",
+    "size": 220,
+    "reviews": 6000,
+    "ratingAvg": 4.8,
+    "downloads": 3000000000,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 180 },
+      { "name": "3 star", "count": 350 },
+      { "name": "4 star", "count": 1300 },
+      { "name": "5 star", "count": 4020 }
+    ]
+  },
+  {
+    "image": "https://images.seeklogo.com/logo-png/36/1/google-maps-icon-2020-logo-png_seeklogo-368992.png",
+    "title": "Google Maps",
+    "companyName": "Google LLC",
+    "id": 13,
+    "description": "Google Maps helps users navigate and explore locations worldwide.",
+    "size": 210,
+    "reviews": 4100,
+    "ratingAvg": 4.7,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 130 },
+      { "name": "2 star", "count": 180 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 2290 }
+    ]
+  },
+  {
+    "image": "https://images.icon-icons.com/3053/PNG/512/google_photos_macos_bigsur_icon_190113.png",
+    "title": "Google Photos",
+    "companyName": "Google LLC",
+    "id": 14,
+    "description": "Google Photos stores, organizes, and shares your photos with cloud backup.",
+    "size": 180,
+    "reviews": 2900,
     "ratingAvg": 4.6,
     "downloads": 5000000000,
     "ratings": [
-      { "name": "1 star", "count": 400000 },
-      { "name": "2 star", "count": 200000 },
-      { "name": "3 star", "count": 600000 },
-      { "name": "4 star", "count": 2000000 },
-      { "name": "5 star", "count": 5800000 }
+      { "name": "1 star", "count": 110 },
+      { "name": "2 star", "count": 160 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1430 }
     ]
   },
   {
-    "id": 10,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732228.png",
-    "title": "Gmail",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png",
+    "title": "Google Drive",
     "companyName": "Google LLC",
-    "description": "Reliable and secure email app that keeps you connected with smart organization tools.",
-    "size": 65,
-    "reviews": 18000000,
+    "id": 15,
+    "description": "Google Drive allows cloud storage and file sharing for users worldwide.",
+    "size": 200,
+    "reviews": 3100,
     "ratingAvg": 4.5,
-    "downloads": 10000000000,
+    "downloads": 8000000000,
     "ratings": [
-      { "name": "1 star", "count": 1000000 },
-      { "name": "2 star", "count": 700000 },
-      { "name": "3 star", "count": 2000000 },
-      { "name": "4 star", "count": 6000000 },
-      { "name": "5 star", "count": 10300000 }
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 450 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1430 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
+    "title": "Uber",
+    "companyName": "Uber Technologies, Inc.",
+    "id": 16,
+    "description": "Uber provides ride-hailing and delivery services worldwide.",
+    "size": 160,
+    "reviews": 2500,
+    "ratingAvg": 4.4,
+    "downloads": 2000000000,
+    "ratings": [
+      { "name": "1 star", "count": 130 },
+      { "name": "2 star", "count": 190 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1080 }
+    ]
+  },
+  {
+    "image": "https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png",
+    "title": "Ubuntu",
+    "companyName": "Ubuntu, Inc.",
+    "id": 17,
+    "description": "Ubuntu connects travelers with hosts offering unique accommodations.",
+    "size": 180,
+    "reviews": 2200,
+    "ratingAvg": 4.6,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 350 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 800 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/MxSGFHJq/zoom.jpg",
+    "title": "Zoom",
+    "companyName": "Zoom Video Communications",
+    "id": 18,
+    "description": "Zoom is a video conferencing platform for meetings and collaboration.",
+    "size": 210,
+    "reviews": 2600,
+    "ratingAvg": 4.5,
+    "downloads": 1500000000,
+    "ratings": [
+      { "name": "1 star", "count": 90 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 1290 }
+    ]
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+    "title": "Telegram",
+    "companyName": "Telegram FZ-LLC",
+    "id": 19,
+    "description": "Telegram is a messaging app focused on speed and security.",
+    "size": 170,
+    "reviews": 2400,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 80 },
+      { "name": "2 star", "count": 100 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1220 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/PsNLSKpD/discord.png",
+    "title": "Discord",
+    "companyName": "Discord Inc.",
+    "id": 20,
+    "description": "Discord is a communication app for communities and gamers.",
+    "size": 190,
+    "reviews": 2700,
+    "ratingAvg": 4.6,
+    "downloads": 800000000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1210 }
+    ]
+  },
+  {
+    "image": "https://pngmax.com/_next/image?url=https%3A%2F%2Fpng-max.s3.ap-south-1.amazonaws.com%2Flow%2F60ce2ebc-b6ea-4cb2-935a-c00baed555f7.png&w=1200&q=75",
+    "title": "Reddit",
+    "companyName": "Reddit, Inc.",
+    "id": 21,
+    "description": "Reddit is a network of communities where users share and discuss content.",
+    "size": 165,
+    "reviews": 2100,
+    "ratingAvg": 4.3,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 160 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 620 }
     ]
   }
 ]
