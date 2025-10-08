@@ -6,6 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import RatingChart from "./RatingChart";
 import loaderImg from "../assets/logo.png";
 import { addToInstalledLS, getStoredInstalledApps } from "../Utility/AddToLS";
+import { Slide, toast } from "react-toastify";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
@@ -30,13 +31,23 @@ const AppDetails = () => {
     const installedApps = getStoredInstalledApps();
     setInstalled(installedApps.includes(appDetailsId));
   }, [appDetailsId]);
-  //  Handle Install button
-  const handleInstall = (id) => {
-    if (!installed) {
-      addToInstalledLS(id);
-      setInstalled(true);
-    }
-  };
+const handleInstall = (id) => {
+  const installedApps = getStoredInstalledApps(); // always fetch latest
+  if (!installedApps.includes(id)) {
+    addToInstalledLS(id); // add and show success toast
+    setInstalled(true);    // cosmetic update
+  } else {
+    toast.warn("This App is already in Installed!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      theme: "dark",
+      transition: Slide,
+    });
+    setInstalled(true); // cosmetic update
+  }
+};
+
   //   Loader state
   if (loading) {
     return (
@@ -115,16 +126,15 @@ const AppDetails = () => {
             </div>
 
             {/* Install Button */}
-            <div className="pt-4">
-              <button
-                onClick={() => handleInstall(appDetailsId)}
-                className={`bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn ${
-                  installed ? "opacity-70 cursor-not-allowed" : ""
-                }`}
-              >
-                {installed ? "Installed" : "Install Now"} ({size} MB)
-              </button>
-            </div>
+<div className="pt-4">
+  <button
+    onClick={() => handleInstall(appDetailsId)}
+    className="bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn"
+  >
+    {installed ? "Installed" : "Install Now"} ({size} MB)
+  </button>
+</div>
+
           </div>
         </div>
         {/* Ratings Section */}
