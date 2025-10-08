@@ -1,6 +1,7 @@
 import React from "react";
 import heroImg from "../assets/hero.png";
 import Apps from "../Components/Apps/Apps";
+import { Link } from "react-router";
 const Home = () => {
   return (
     <section>
@@ -24,20 +25,22 @@ const Home = () => {
 
           {/* Store Buttons */}
           <div className="flex justify-center gap-3 mt-6 flex-wrap">
-            <button className="btn flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+            <Link to={'https://play.google.com/store/apps'} className="btn flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                src="https://img.icons8.com/?size=96&id=L1ws9zn2uD01&format=png"
                 alt="Google Play"
                 className="h-6"
               />
-            </button>
-            <button className="flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+              <p>Play Store</p>
+            </Link>
+            <Link to={'https://apps.apple.com/bj/developer/apple/id284417353?mt=12'} className="flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg"
                 alt="App Store"
                 className="h-6"
               />
-            </button>
+              <p>App Store</p>
+            </Link>
           </div>
         </div>
 
