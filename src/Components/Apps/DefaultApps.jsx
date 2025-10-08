@@ -6,11 +6,11 @@ import { GoDownload } from "react-icons/go";
 
 const DefaultApps = ({ apps }) => {
   //destructure apps object
-  const { downloads, id, image, title, ratings } = apps;
+  const { downloads, image, title, ratingAvg } = apps;
   return (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+    <div className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
       {/* Image Section */}
-      <div className="w-full aspect-[4/3] bg-gray-200 flex items-center justify-center">
+      <div className="w-full aspect-[4/3] bg-gray-300 flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className=" w-28 " />
         ) : (
@@ -33,7 +33,8 @@ const DefaultApps = ({ apps }) => {
 
           {/* Rating */}
           <div className="flex items-center bg-orange-50 text-orange-500 px-2 py-1 rounded-md text-xs sm:text-sm font-medium">
-            <AiFillStar className="w-4 h-4 mr-1 text-orange-400" />6
+            <AiFillStar className="w-4 h-4 mr-1" />
+            {ratingAvg}
           </div>
         </div>
       </div>
