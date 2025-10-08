@@ -5,10 +5,11 @@ import { FiDownload } from "react-icons/fi";
 import { GoDownload } from "react-icons/go";
 
 const DefaultApps = ({ apps }) => {
+  // const {}
   //destructure apps object
   const { downloads, image, title, ratingAvg } = apps;
   return (
-    <div className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+    <div className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer">
       {/* Image Section */}
       <div className="w-full aspect-[4/3] bg-gray-300 flex items-center justify-center">
         {image ? (
@@ -19,7 +20,7 @@ const DefaultApps = ({ apps }) => {
       </div>
 
       {/* Content Section */}
-      <div className="p-3 flex flex-col  text-center">
+      <div className="p-3 flex flex-col  text-center bg-[#fdfdfd]">
         <h3 className="text-sm sm:text-base font-semibold text-gray-800">
           {title}
         </h3>
