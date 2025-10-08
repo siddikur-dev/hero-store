@@ -4,11 +4,11 @@ import { useParams } from "react-router";
 import { AiFillStar } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 import RatingChart from "./RatingChart";
-
+import loaderImg from "../assets/logo.png";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
-  const { apps } = useApps();
+  const { apps, loading, error } = useApps();
   const singleApp = apps.find((app) => app.id === appDetailsId);
   const {
     image,
@@ -22,6 +22,23 @@ const AppDetails = () => {
     ratings,
   } = singleApp || {};
 
+  //   Loader state
+  //  Loading state
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen text-6xl">
+        <img
+          className="loading loading-spinner text-6xl"
+          src={loaderImg}
+          alt=""
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="text-red-500 text-center">Error: {error.message}</p>;
+  }
   return (
     <div className="p-5 sm:p-8 bg-[#f5f5f5]">
       {/* container  */}

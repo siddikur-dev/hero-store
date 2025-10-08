@@ -6,9 +6,10 @@ import { FaS } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
-
+import ImageLoader from "../ImageLoader";
+import loaderImg from "/logo.png";
 const AllApps = () => {
-  const { apps } = useApps();
+  const { apps, loading, error } = useApps();
 
   //   navigate to details page
   const Navigate = useNavigate();
@@ -17,6 +18,21 @@ const AllApps = () => {
   const filteredApps = apps.filter((app) =>
     app.title.toLowerCase().includes(search.toLowerCase())
   );
+
+  //  Loading state
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner text-blue-500">
+          <img className="loading loading-spinner" src={loaderImg} alt="" />
+        </span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="text-red-500 text-center">Error: {error.message}</p>;
+  }
   return (
     <div className="bg-[#f5f5f5] py-16">
       <h1 className="md:text-2xl lg:text-4xl font-bold text-center">
