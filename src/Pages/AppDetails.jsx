@@ -11,7 +11,7 @@ import ImageLoader from "../Components/ImageLoader";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
-  const { apps, loading, error } = useApps();
+  const { apps, loading } = useApps();
   const singleApp = apps.find((app) => app.id === appDetailsId);
   const {
     image,

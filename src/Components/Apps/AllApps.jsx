@@ -28,8 +28,7 @@ const AllApps = () => {
           className="loading loading-spinner "
           src={loaderImg}
           alt=""
-        />
-        ading...
+        />ading...
       </div>
     );
   }
@@ -47,7 +46,7 @@ const AllApps = () => {
         <div className="flex justify-between pt-16 px-5 ">
           <div className="hidden md:flex ">
             <h2 className=" text-gray-600 font-bold ">
-              ({apps.length}) Apps Found
+              ({filteredApps.length}) Apps Found
             </h2>
           </div>
           <div className="relative justify-center mx-auto md:mx-0">
