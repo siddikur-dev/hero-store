@@ -5,13 +5,30 @@ import { FcRating } from "react-icons/fc";
 import DefaultApps from "./DefaultApps";
 import Button from "../Button/Button";
 import { Link } from "react-router";
-
+import loaderImg from "/logo.png";
 const Apps = () => {
-  const { apps } = useApps();
+  const { apps, loading, error } = useApps();
   // Default 8 Apps shown
   const defaultApps = [...apps]
     .sort((a, b) => b.downloads - a.downloads)
     .slice(0, 8);
+
+  //   Loader state
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen text-6xl">
+        <img
+          className="loading loading-spinner text-6xl"
+          src={loaderImg}
+          alt=""
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="text-red-500 text-center">Error: {error.message}</p>;
+  }
 
   return (
     <div className="py-8  bg-[#f5f5f5] ">

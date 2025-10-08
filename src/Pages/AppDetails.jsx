@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useApps from "../hooks/useApps";
 import { useParams } from "react-router";
 import { AiFillStar } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 import RatingChart from "./RatingChart";
 import loaderImg from "../assets/logo.png";
+import { addToInstalledLS, getStoredInstalledApps } from "../Utility/AddToLS";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
@@ -21,9 +22,22 @@ const AppDetails = () => {
     size,
     ratings,
   } = singleApp || {};
+  // Installed button state handler
+  const [installed, setInstalled] = useState(false);
 
+  // Page load  check from localStorage
+  useEffect(() => {
+    const installedApps = getStoredInstalledApps();
+    setInstalled(installedApps.includes(appDetailsId));
+  }, [appDetailsId]);
+  //  Handle Install button
+  const handleInstall = (id) => {
+    if (!installed) {
+      addToInstalledLS(id);
+      setInstalled(true);
+    }
+  };
   //   Loader state
-  //  Loading state
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen text-6xl">
@@ -39,6 +53,7 @@ const AppDetails = () => {
   if (error) {
     return <p className="text-red-500 text-center">Error: {error.message}</p>;
   }
+
   return (
     <div className="p-5 sm:p-8 bg-[#f5f5f5]">
       {/* container  */}
@@ -101,8 +116,13 @@ const AppDetails = () => {
 
             {/* Install Button */}
             <div className="pt-4">
-              <button className="bg-green-500 text-white font-medium px-6 py-2.5 rounded-md hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer">
-                Install Now ({size})
+              <button
+                onClick={() => handleInstall(appDetailsId)}
+                className={`bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn ${
+                  installed ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+              >
+                {installed ? "Installed" : "Install Now"} ({size} MB)
               </button>
             </div>
           </div>

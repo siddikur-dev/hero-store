@@ -1,87 +1,31 @@
-import { Zoom, toast } from "react-toastify";
-//   Get ReadBook Data From LocalStorage //ignore
-const getStoredReadBook = () => {
-  const storedBookSTR = localStorage.getItem("readList");
-  if (storedBookSTR) {
-    return JSON.parse(storedBookSTR);
-  }
-  return [];
-};
-
-//  LocalStorage Set Mars As Read Book //ignore
-const addToReadLS = (id) => {
-  const storedBookData = getStoredReadBook();
-
-  if (storedBookData.includes(id)) {
-    toast.warn("This book is already added readList!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      theme: "dark",
-      transition: Zoom,
-    });
-  } else {
-    storedBookData.push(id);
-    localStorage.setItem("readList", JSON.stringify(storedBookData));
-
-    toast.success("Book added successfully!", {
-      position: "top-right",
-      autoClose: 2000,
-      theme: "colored",
-      transition: Zoom,
-    });
-  }
-};
-
-//    Remove ReadBook LS//ignore
-const removeReadBookLS = (id) => {
-  const storedBookData = getStoredReadBook();
-  const newStoredData = storedBookData.filter((bookId) => bookId !== id);
-
-  if (storedBookData.length === newStoredData.length) {
-    toast.info("This book is not in the list!", {
-      position: "top-right",
-      autoClose: 2000,
-      theme: "dark",
-      transition: Zoom,
-    });
-  } else {
-    localStorage.setItem("readList", JSON.stringify(newStoredData));
-    toast.success("Book removed successfully!", {
-      position: "top-right",
-      autoClose: 2000,
-      theme: "light",
-      transition: Zoom,
-    });
-  }
-};
+import { Slide, Zoom, toast } from "react-toastify";
 
 //  Get Installed Apps From LocalStorage
-const getStoredInstalledBook = () => {
-  const storedBookSTR = localStorage.getItem("Installed");
-  if (storedBookSTR) {
-    return JSON.parse(storedBookSTR);
+const getStoredInstalledApps = () => {
+  const installedApps = localStorage.getItem("Installed Apps");
+  if (installedApps) {
+    return JSON.parse(installedApps);
   }
   return [];
 };
 
-//  LocalStorage Set Mars As WishList
+//  LocalStorage Set Installed Apps
 const addToInstalledLS = (id) => {
-  const storedBookData = getStoredInstalledBook();
+  const installedApps = getStoredInstalledApps();
 
-  if (storedBookData.includes(id)) {
-    toast.warn("This book is already added in wishlist!", {
+  if (installedApps.includes(id)) {
+    toast.warn("This App already  in Installed!", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       theme: "dark",
-      transition: Zoom,
+      transition: Slide,
     });
   } else {
-    storedBookData.push(id);
-    localStorage.setItem("wishList", JSON.stringify(storedBookData));
+    installedApps.push(id);
+    localStorage.setItem("Installed Apps", JSON.stringify(installedApps));
 
-    toast.success("Wishlist added successfully!", {
+    toast.success("Installed Apps successfully!", {
       position: "top-right",
       autoClose: 2000,
       theme: "colored",
@@ -91,19 +35,19 @@ const addToInstalledLS = (id) => {
 };
 //  Remove Installed LS
 const removeInstalledLS = (id) => {
-  const storedBookData = getStoredInstalledBook();
-  const newStoredData = storedBookData.filter((bookId) => bookId !== id);
+  const installedApps = getStoredInstalledApps();
+  const newInstalledApps = installedApps.filter((appId) => appId !== id);
 
-  if (storedBookData.length === newStoredData.length) {
-    toast.info("This book is not in the list!", {
+  if (installedApps.length === newInstalledApps.length) {
+    toast.info("This App is not in the list!", {
       position: "top-right",
       autoClose: 2000,
       theme: "dark",
       transition: Zoom,
     });
   } else {
-    localStorage.setItem("wishList", JSON.stringify(newStoredData));
-    toast.success("Book removed successfully!", {
+    localStorage.setItem("Installed Apps", JSON.stringify(newInstalledApps));
+    toast.success("Apps Installed successfully!", {
       position: "top-right",
       autoClose: 2000,
       theme: "light",
@@ -112,11 +56,4 @@ const removeInstalledLS = (id) => {
   }
 };
 
-export {
-  addToReadLS, //ignore
-  addToInstalledLS,
-  getStoredReadBook, //ignore
-  getStoredInstalledBook,
-  removeReadBookLS, //ignore
-  removeInstalledLS,
-};
+export { getStoredInstalledApps, addToInstalledLS, removeInstalledLS };
