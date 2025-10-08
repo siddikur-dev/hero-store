@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 
-const InstallationApps = ({app}) => {
+const InstallationApps = ({ app, handleUninstallApp }) => {
   return (
     <div>
       <div
@@ -39,7 +39,10 @@ const InstallationApps = ({app}) => {
         </div>
 
         {/* Right Button */}
-        <button className="mt-3 sm:mt-0 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-4 py-1.5 rounded-md transition">
+        <button
+          onClick={() => handleUninstallApp(app.id)}
+          className="mt-3 sm:mt-0 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-4 py-1.5 rounded-md transition"
+        >
           Uninstall
         </button>
       </div>

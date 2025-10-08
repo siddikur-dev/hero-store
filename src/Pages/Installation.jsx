@@ -4,14 +4,14 @@ import { FiDownload } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import useApps from "../hooks/useApps";
 import InstallationApps from "./InstallationApps";
-import { getStoredInstalledApps } from "../Utility/AddToLS";
+import { getStoredInstalledApps, removeInstalledLS } from "../Utility/AddToLS";
 import loaderImg from "../assets/logo.png";
 import ImageLoader from "../Components/ImageLoader";
 const Installation = () => {
   const { apps, loading } = useApps();
   //state set installedApps Data
   const [installedApps, setInstalledApps] = useState([]);
-  //fetch Apps
+  // get installed apps from localStorage and set to state
   useEffect(() => {
     const storedApps = getStoredInstalledApps();
     const myApps = apps.filter((app) => storedApps.includes(app.id));
@@ -32,7 +32,13 @@ const Installation = () => {
     setInstalledApps(sortedList);
   };
 
-  //loading spinner 
+  //uninstall Apps function
+  const handleUninstallApp = (id) => {
+    removeInstalledLS(id);
+    setInstalledApps((prevList) => prevList.filter((app) => app.id !== id));
+  };
+
+  //loading spinner
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen text-5xl">
@@ -81,7 +87,11 @@ const Installation = () => {
         {/* App List */}
         <div className="space-y-4">
           {installedApps.map((app) => (
-            <InstallationApps key={app.id} app={app} />
+            <InstallationApps
+              handleUninstallApp={handleUninstallApp}
+              key={app.id}
+              app={app}
+            />
           ))}
         </div>
       </div>
