@@ -7,6 +7,7 @@ import RatingChart from "./RatingChart";
 import loaderImg from "../assets/logo.png";
 import { addToInstalledLS, getStoredInstalledApps } from "../Utility/AddToLS";
 import { Slide, toast } from "react-toastify";
+import ImageLoader from "../Components/ImageLoader";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
@@ -31,38 +32,36 @@ const AppDetails = () => {
     const installedApps = getStoredInstalledApps();
     setInstalled(installedApps.includes(appDetailsId));
   }, [appDetailsId]);
-const handleInstall = (id) => {
-  const installedApps = getStoredInstalledApps(); // always fetch latest
-  if (!installedApps.includes(id)) {
-    addToInstalledLS(id); // add and show success toast
-    setInstalled(true);    // cosmetic update
-  } else {
-    toast.warn("This App is already in Installed!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      theme: "dark",
-      transition: Slide,
-    });
-    setInstalled(true); // cosmetic update
-  }
-};
+  const handleInstall = (id) => {
+    const installedApps = getStoredInstalledApps(); // always fetch latest
+    if (!installedApps.includes(id)) {
+      addToInstalledLS(id); // add and show success toast
+      setInstalled(true); // cosmetic update
+    } else {
+      toast.warn("This App is already in Installed!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        theme: "dark",
+        transition: Slide,
+      });
+      setInstalled(true); // cosmetic update
+    }
+  };
 
-  //   Loader state
+  // loading spinner applied
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen text-6xl">
-        <img
-          className="loading loading-spinner text-6xl"
+      <div className="flex justify-center items-center min-h-screen text-5xl">
+        L{" "}
+        <ImageLoader
+          className="loading loading-spinner w-2"
           src={loaderImg}
           alt=""
         />
+        ading...
       </div>
     );
-  }
-
-  if (error) {
-    return <p className="text-red-500 text-center">Error: {error.message}</p>;
   }
 
   return (
@@ -126,15 +125,14 @@ const handleInstall = (id) => {
             </div>
 
             {/* Install Button */}
-<div className="pt-4">
-  <button
-    onClick={() => handleInstall(appDetailsId)}
-    className="bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn"
-  >
-    {installed ? "Installed" : "Install Now"} ({size} MB)
-  </button>
-</div>
-
+            <div className="pt-4">
+              <button
+                onClick={() => handleInstall(appDetailsId)}
+                className="bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn"
+              >
+                {installed ? "Installed" : "Install Now"} ({size} MB)
+              </button>
+            </div>
           </div>
         </div>
         {/* Ratings Section */}

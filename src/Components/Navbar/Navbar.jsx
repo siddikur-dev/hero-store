@@ -92,7 +92,15 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end">
-        <Button className="flex items-center gap-2">
+        <Button
+          onClick={() =>
+            window.open(
+              "https://github.com/siddikur-dev?tab=repositories",
+              "_blank"
+            )
+          }
+          className="flex items-center gap-2"
+        >
           <FaGithub className="text-lg" />
           Contribute
         </Button>

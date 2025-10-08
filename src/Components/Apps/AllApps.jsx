@@ -7,9 +7,9 @@ import { FaSearch } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
 import ImageLoader from "../ImageLoader";
-import loaderImg from "/logo.png";
+import loaderImg from "../../assets/logo.png";
 const AllApps = () => {
-  const { apps, loading, error } = useApps();
+  const { apps, loading } = useApps();
 
   //   navigate to details page
   const Navigate = useNavigate();
@@ -19,19 +19,19 @@ const AllApps = () => {
     app.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  //  Loading state
+  //   loading spinner applied
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <span className="loading loading-spinner text-blue-500">
-          <img className="loading loading-spinner" src={loaderImg} alt="" />
-        </span>
+      <div className="flex justify-center items-center min-h-screen text-5xl ">
+        L{" "}
+        <ImageLoader
+          className="loading loading-spinner "
+          src={loaderImg}
+          alt=""
+        />
+        ading...
       </div>
     );
-  }
-
-  if (error) {
-    return <p className="text-red-500 text-center">Error: {error.message}</p>;
   }
   return (
     <div className="bg-[#f5f5f5] py-16">

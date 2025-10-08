@@ -24,23 +24,25 @@ const Installation = () => {
   const handleSort = (type) => {
     const sortedList = [...installedApps];
     setSort(type);
-    if (type === "Low") {
+    if (type === "High") {
       sortedList.sort((a, b) => b.size - a.size);
-    } else if (type === "High") {
+    } else if (type === "Low") {
       sortedList.sort((a, b) => a.size - b.size);
     }
     setInstalledApps(sortedList);
   };
 
-  //loading spinner applied
+  //loading spinner 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen text-5xl">
+        L{" "}
         <ImageLoader
-          className="loading loading-spinner"
+          className="loading loading-spinner w-2"
           src={loaderImg}
           alt=""
         />
+        ading...
       </div>
     );
   }
@@ -62,10 +64,10 @@ const Installation = () => {
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li>
-                <button onClick={() => handleSort("Low")}>High - Low </button>
+                <button onClick={() => handleSort("High")}>High - Low </button>
               </li>
               <li>
-                <button onClick={() => handleSort("High")}>Low - High</button>
+                <button onClick={() => handleSort("Low")}>Low - High</button>
               </li>
             </ul>
           </div>
