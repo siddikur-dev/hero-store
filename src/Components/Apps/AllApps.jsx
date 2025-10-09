@@ -8,6 +8,8 @@ import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
 import ImageLoader from "../ImageLoader";
 import loaderImg from "../../assets/logo.png";
+import appErrorImage from "../../assets/App-Error.png";
+import Button from "../Button/Button";
 const AllApps = () => {
   const { apps, loading } = useApps();
 
@@ -28,10 +30,12 @@ const AllApps = () => {
           className="loading loading-spinner "
           src={loaderImg}
           alt=""
-        />ading...
+        />
+        ading...
       </div>
     );
   }
+
   return (
     <div className="bg-[#f5f5f5] py-16">
       <h1 className="md:text-2xl lg:text-4xl font-bold text-center">
@@ -63,31 +67,39 @@ const AllApps = () => {
           </div>
         </div>
         {/* All Apps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8  ">
-          {/* Single Card */}
-          {filteredApps.map((app) => {
-            return (
+        {filteredApps.length === 0 ? (
+          <div className="my-12 space-y-7">
+            <img className="mx-auto w-[350px]" src={appErrorImage} alt="appErrorImage" />
+            <div className="text-center space-y-7">
+              <h1 className="font-bold text-4xl">Oops, app not found!</h1>
+              <Button onClick={() => Navigate("/")}>Go Back!</Button>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8">
+            {/* Single Card */}
+            {filteredApps.map((app) => (
               <div
                 onClick={() => Navigate(`/apps-details/${app.id}`)}
                 key={app.id}
-                className=" rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
+                className="rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
               >
                 {/* Image Section */}
                 <div className="w-full aspect-[4/3] bg-gray-200 flex items-center justify-center">
                   {app.image ? (
-                    <img src={app.image} alt={app.title} className=" w-28 " />
+                    <img src={app.image} alt={app.title} className="w-28" />
                   ) : (
                     <div className="text-gray-400 text-sm">No Image</div>
                   )}
                 </div>
 
                 {/* Content Section */}
-                <div className="p-3 flex flex-col  text-center bg-[#fdfdfd]">
+                <div className="p-3 flex flex-col text-center bg-[#fdfdfd]">
                   <h3 className="text-sm sm:text-base font-semibold text-gray-800">
                     {app.title}
                   </h3>
 
-                  <div className="mt-2 flex  justify-between gap-2">
+                  <div className="mt-2 flex justify-between gap-2">
                     {/* Downloads */}
                     <div className="flex items-center bg-green-50 text-green-600 px-2 py-1 rounded-md text-xs sm:text-sm font-medium">
                       <FiDownload className="w-4 h-4 mr-1" />
@@ -102,9 +114,9 @@ const AllApps = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
