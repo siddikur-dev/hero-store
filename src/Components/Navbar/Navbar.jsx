@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* Navbar Start */}
       <div className="navbar-start">
         {/* Mobile Menu */}
-        <div className="dropdown">
+        <div className="dropdown md:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -58,20 +58,19 @@ const Navbar = () => {
         </div>
 
         {/* Brand Name */}
-        <div onClick={() => navigate("/")} className="flex items-center cursor-pointer ">
-          <img
-            className=" hidden md:block md:w-8 lg:w-12"
-            src={logo}
-            alt="Logo Img"
-          />
-          <NavLink className="lg:text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
+        <div
+          onClick={() => navigate("/")}
+          className=" items-center cursor-pointer hidden md:flex"
+        >
+          <img className="  md:w-8 lg:w-12" src={logo} alt="Logo Img" />
+          <NavLink className=" lg:text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
             Hero Store
           </NavLink>
         </div>
       </div>
 
       {/* Navbar Center (Desktop) */}
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul className=" menu-horizontal px-1 gap-4">
           {links.map((link) => (
             <li key={link.path}>

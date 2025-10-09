@@ -21,8 +21,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <aside className="pt-2 text-center">
-          <p>
+        <aside className="py-2 text-center">
+          <p className="text-sm md:text-base text-gray-300">
             Copyright © {new Date().getFullYear()} - All right reserved by Books
             Store.
           </p>

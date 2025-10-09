@@ -33,8 +33,8 @@ const Apps = () => {
       <h1 className="text-xl font-bold md:text-2xl lg:text-4xl text-center">
         Trending Apps
       </h1>
-      <p className="text-center text-sm md:text-base py-2">
-        Explore All Trending Apps on the Market developed by us
+      <p className="text-center text-sm md:text-base p-2">
+        Explore All Trending Apps on the Market developed by us.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8 container mx-auto ">
         {defaultApps.map((apps) => (

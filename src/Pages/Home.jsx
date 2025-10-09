@@ -16,7 +16,7 @@ const Home = () => {
             </span>{" "}
             Apps
           </h1>
-          <p className="mt-4 text-gray-600 text-sm md:text-base">
+          <p className="mt-4 text-gray-600 text-sm md:text-base px-3">
             At <span className="font-semibold">Hero Store</span> we create
             powerful and innovative apps that make everyday life simpler,
             smarter, and more inspiring. Our mission is to transform your ideas
