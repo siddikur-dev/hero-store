@@ -1,27 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useApps from "../../hooks/useApps";
 import { FiDownload } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
-import { FaS } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
-import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
 import ImageLoader from "../ImageLoader";
 import loaderImg from "../../assets/logo.png";
 import appErrorImage from "../../assets/App-Error.png";
 import Button from "../Button/Button";
+
 const AllApps = () => {
   const { apps, loading } = useApps();
 
-  //   navigate to details page
+  // Navigate to app details or home
   const Navigate = useNavigate();
-  //   Search live functionality
-  const [search, setSearch] = useState("");
-  const filteredApps = apps.filter((app) =>
-    app.title.toLowerCase().includes(search.toLowerCase())
-  );
 
-  //   loading spinner applied
+  // ------------------------
+  // Search live functionality
+  // ------------------------
+  const [search, setSearch] = useState("");
+  const [filteredApps, setFilteredApps] = useState(apps); // filtered result state
+  const [searchLoading, setSearchLoading] = useState(false); // temp loading while search
+
+  // Handle live search with a small delay
+  // Added setTimeout to show loading during typing
+  useEffect(() => {
+    setSearchLoading(true);
+    const delay = setTimeout(() => {
+      const results = apps.filter((app) =>
+        app.title.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredApps(results); // update filtered apps
+      setSearchLoading(false);
+    }, 100);
+    return () => clearTimeout(delay);
+  }, [search, apps]);
+
+  // Show global loading while fetching apps
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen text-5xl ">
@@ -38,6 +53,7 @@ const AllApps = () => {
 
   return (
     <div className="bg-[#f5f5f5] py-16">
+      {/* Page Title */}
       <h1 className="md:text-2xl lg:text-4xl font-bold text-center">
         Our All Application
       </h1>
@@ -46,7 +62,7 @@ const AllApps = () => {
       </p>
 
       <div className="container mx-auto">
-        {/* input search & Apps Found */}
+        {/* Search Input & App Count */}
         <div className="flex justify-between pt-16 px-5 ">
           <div className="hidden md:flex ">
             <h2 className=" text-gray-600 font-bold ">
@@ -66,18 +82,34 @@ const AllApps = () => {
             </span>
           </div>
         </div>
-        {/* All Apps */}
-        {filteredApps.length === 0 ? (
+
+        {/* Show loading spinner while searching */}
+        {searchLoading ? (
+          <div className="flex justify-center items-center min-h-[50vh] text-5xl">
+            L{" "}
+            <ImageLoader
+              className="loading loading-spinner "
+              src={loaderImg}
+              alt=""
+            />
+            ading...
+          </div>
+        ) : filteredApps.length === 0 ? (
+          // Show not found if no apps match search
           <div className="my-12 space-y-7">
-            <img className="mx-auto w-[350px]" src={appErrorImage} alt="appErrorImage" />
+            <img
+              className="mx-auto w-[350px]"
+              src={appErrorImage}
+              alt="appErrorImage"
+            />
             <div className="text-center space-y-7">
               <h1 className="font-bold text-4xl">Oops, app not found!</h1>
               <Button onClick={() => Navigate("/")}>Go Back!</Button>
             </div>
           </div>
         ) : (
+          // Show all filtered apps in grid
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8">
-            {/* Single Card */}
             {filteredApps.map((app) => (
               <div
                 onClick={() => Navigate(`/apps-details/${app.id}`)}
