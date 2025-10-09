@@ -104,7 +104,7 @@ const AllApps = () => {
             />
             <div className="text-center space-y-7">
               <h1 className="font-bold text-4xl">Oops, app not found!</h1>
-              <Button onClick={() => Navigate("/")}>Go Back!</Button>
+              <Button onClick={() => Navigate(-1)}>Go Back!</Button>
             </div>
           </div>
         ) : (
