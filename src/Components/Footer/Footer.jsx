@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaX, FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className=" bg-[#001931] text-white p-4  ">
@@ -14,9 +15,21 @@ const Footer = () => {
           <div className="">
             <h2 className="font-bold pb-3">Social Icon</h2>
             <div className="flex gap-2">
-              <FaXTwitter></FaXTwitter>
-              <FaLinkedin></FaLinkedin>
-              <FaFacebook></FaFacebook>
+              <Link to={"https://x.com/siddikur_dev "} target="_blank">
+                <FaXTwitter></FaXTwitter>
+              </Link>
+              <Link
+                to={"https://www.linkedin.com/in/dev-siddikur/"}
+                target="_blank"
+              >
+                <FaLinkedin></FaLinkedin>
+              </Link>
+              <Link
+                to={"https://www.facebook.com/siddikur.dev/"}
+                target="_blank"
+              >
+                <FaFacebook></FaFacebook>
+              </Link>
             </div>
           </div>
         </div>
