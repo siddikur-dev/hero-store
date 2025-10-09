@@ -114,7 +114,7 @@ const AllApps = () => {
               <div
                 onClick={() => Navigate(`/apps-details/${app.id}`)}
                 key={app.id}
-                className="rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
+                className="rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer  transform hover:-translate-y-1 bg-white"
               >
                 {/* Image Section */}
                 <div className="w-full aspect-[4/3] bg-gray-200 flex items-center justify-center">

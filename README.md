@@ -1,6 +1,6 @@
 # 📱 Installation Apps
 
-![Banner](https://i.ibb.co.com/XZxnYtpr/Screenshot-9.png)
+![Banner](https://i.ibb.co.com/b5pKWMy5/Screenshot-10.png)
 
 > Discover all your installed apps and stay updated with the latest trending applications developed by us. Manage, explore, and enjoy your apps effortlessly!
 
