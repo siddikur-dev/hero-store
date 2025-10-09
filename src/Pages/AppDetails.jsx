@@ -8,6 +8,7 @@ import loaderImg from "../assets/logo.png";
 import { addToInstalledLS, getStoredInstalledApps } from "../Utility/AddToLS";
 import { Slide } from "react-toastify";
 import ImageLoader from "../Components/ImageLoader";
+import { Helmet } from "react-helmet-async";
 const AppDetails = () => {
   const { id } = useParams();
   const appDetailsId = parseInt(id);
@@ -57,6 +58,9 @@ const AppDetails = () => {
 
   return (
     <div className="p-5 sm:p-8 bg-[#f5f5f5]">
+      <Helmet>
+        <title>{title}  App Details</title>
+      </Helmet>
       {/* container  */}
       <div className="container mx-auto ">
         {/* Top Section */}

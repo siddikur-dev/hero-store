@@ -8,6 +8,7 @@ import ImageLoader from "../ImageLoader";
 import loaderImg from "../../assets/logo.png";
 import appErrorImage from "../../assets/App-Error.png";
 import Button from "../Button/Button";
+import { Helmet } from "react-helmet-async";
 
 const AllApps = () => {
   const { apps, loading } = useApps();
@@ -53,6 +54,9 @@ const AllApps = () => {
 
   return (
     <div className="bg-[#f5f5f5] py-16">
+      <Helmet>
+        <title>Hero Store - All Apps</title>
+      </Helmet>
       {/* Page Title */}
       <h1 className="md:text-2xl lg:text-4xl font-bold text-center">
         Our All Application

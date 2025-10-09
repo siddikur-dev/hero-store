@@ -2,9 +2,13 @@ import React from "react";
 import heroImg from "../assets/hero.png";
 import Apps from "../Components/Apps/Apps";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   return (
     <section>
+      <Helmet>
+        <title>Hero Store - Home</title>
+      </Helmet>
       {/* Hero */}
       <section className="w-full flex flex-col items-center text-center bg-[#f5f5f5] ">
         {/* Top Content */}
@@ -25,7 +29,10 @@ const Home = () => {
 
           {/* Store Buttons */}
           <div className="flex justify-center gap-3 mt-6 flex-wrap">
-            <Link to={'https://play.google.com/store/apps'} className="btn flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+            <Link
+              to={"https://play.google.com/store/apps"}
+              className="btn flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition"
+            >
               <img
                 src="https://img.icons8.com/?size=96&id=L1ws9zn2uD01&format=png"
                 alt="Google Play"
@@ -33,7 +40,10 @@ const Home = () => {
               />
               <p>Play Store</p>
             </Link>
-            <Link to={'https://apps.apple.com/bj/developer/apple/id284417353?mt=12'} className="flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition">
+            <Link
+              to={"https://apps.apple.com/bj/developer/apple/id284417353?mt=12"}
+              className="flex items-center gap-2 bg-white border border-gray-200 shadow-md px-4 py-2 rounded-lg hover:shadow-lg transition"
+            >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg"
                 alt="App Store"

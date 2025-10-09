@@ -47,7 +47,7 @@ const removeInstalledLS = (id) => {
     });
   } else {
     localStorage.setItem("Installed Apps", JSON.stringify(newInstalledApps));
-    toast.success("Apps Installed successfully!", {
+    toast.success("App Uninstalled successfully!", {
       position: "top-right",
       autoClose: 2000,
       theme: "light",

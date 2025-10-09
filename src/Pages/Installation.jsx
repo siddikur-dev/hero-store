@@ -7,6 +7,7 @@ import InstallationApps from "./InstallationApps";
 import { getStoredInstalledApps, removeInstalledLS } from "../Utility/AddToLS";
 import loaderImg from "../assets/logo.png";
 import ImageLoader from "../Components/ImageLoader";
+import { Helmet } from "react-helmet-async";
 const Installation = () => {
   const { apps, loading } = useApps();
   //state set installedApps Data
@@ -54,6 +55,9 @@ const Installation = () => {
   }
   return (
     <div className="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-12">
+      <Helmet>
+        <title>Hero Store - Installed Apps</title>
+      </Helmet>
       <div className="container mx-auto">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 ">
