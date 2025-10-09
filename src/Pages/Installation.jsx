@@ -57,9 +57,27 @@ const Installation = () => {
       <div className="container mx-auto">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 ">
-          <p className="text-gray-500 text-sm sm:text-base text-center md:text-left">
-            Explore All Trending Apps on the Market developed by us
-          </p>
+          <div className="mx-auto">
+            <h2
+              className="text-center text-xl md:text-2xl lg:text-4xl font-bold py-3
+            "
+            >
+              My Installation Apps
+            </h2>
+            <p className="text-gray-500 text-sm sm:text-base text-center w-full md:w-3/4 lg:w-2/3 mx-auto">
+              "Discover all your installed apps and stay updated with the latest
+              trending applications developed by us. Manage, explore, and enjoy
+              your apps effortlessly!"
+            </p>
+          </div>
+        </div>
+
+        {/* Title */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
+            {installedApps.length} Apps Found
+          </h2>
+
           {/* Sort By Dropdown */}
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn m-1">
@@ -78,11 +96,6 @@ const Installation = () => {
             </ul>
           </div>
         </div>
-
-        {/* Title */}
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-          {installedApps.length} Apps Found
-        </h2>
 
         {/* App List */}
         <div className="space-y-4">

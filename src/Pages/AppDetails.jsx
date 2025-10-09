@@ -6,7 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import RatingChart from "./RatingChart";
 import loaderImg from "../assets/logo.png";
 import { addToInstalledLS, getStoredInstalledApps } from "../Utility/AddToLS";
-import { Slide, toast } from "react-toastify";
+import { Slide } from "react-toastify";
 import ImageLoader from "../Components/ImageLoader";
 const AppDetails = () => {
   const { id } = useParams();
@@ -36,15 +36,6 @@ const AppDetails = () => {
     const installedApps = getStoredInstalledApps(); // always fetch latest
     if (!installedApps.includes(id)) {
       addToInstalledLS(id); // add and show success toast
-      setInstalled(true); // cosmetic update
-    } else {
-      toast.warn("This App is already in Installed!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        theme: "dark",
-        transition: Slide,
-      });
       setInstalled(true); // cosmetic update
     }
   };
@@ -128,7 +119,12 @@ const AppDetails = () => {
             <div className="pt-4">
               <button
                 onClick={() => handleInstall(appDetailsId)}
-                className="bg-green-500 text-white font-medium hover:bg-green-600 transition-all text-sm sm:text-base cursor-pointer btn"
+                className={`bg-green-500 text-white font-medium transition-all text-sm sm:text-base btn
+      ${
+        installed
+          ? "cursor-not-allowed opacity-90"
+          : "hover:bg-green-600 cursor-pointer"
+      }`}
               >
                 {installed ? "Installed" : "Install Now"} ({size} MB)
               </button>
