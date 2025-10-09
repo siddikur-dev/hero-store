@@ -1,6 +1,6 @@
 # 📱 Installation Apps
 
-![Banner](https://via.placeholder.com/1200x300?text=Explore+All+Installed+and+Trending+Apps)
+![Banner](https://i.ibb.co.com/XZxnYtpr/Screenshot-9.png)
 
 > Discover all your installed apps and stay updated with the latest trending applications developed by us. Manage, explore, and enjoy your apps effortlessly!
 
@@ -27,3 +27,7 @@
 - **Notifications:** react-toastify
 - **Local Storage:** Custom utility for installed apps
 - **Charts:** Custom Ratings Chart
+
+## 🌐 Live Demo
+
+[Click here to view live application](https://hero-apps-store.netlify.app/)
