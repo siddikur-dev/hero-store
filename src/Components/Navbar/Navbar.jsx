@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import Button from "../Button/Button";
 import { FaGithub } from "react-icons/fa";
 import logo from "../../assets/logo.png";
@@ -10,6 +10,9 @@ const Navbar = () => {
     { name: "Apps", path: "/apps" },
     { name: "Installation", path: "/installation" },
   ];
+
+  //navigation to home
+  const navigate = useNavigate();
 
   return (
     <div className="navbar px-4 md:px-8 container mx-auto">
@@ -55,16 +58,13 @@ const Navbar = () => {
         </div>
 
         {/* Brand Name */}
-        <div className="flex items-center">
+        <div onClick={() => navigate("/")} className="flex items-center cursor-pointer ">
           <img
             className=" hidden md:block md:w-8 lg:w-12"
             src={logo}
             alt="Logo Img"
           />
-          <NavLink
-            to="/"
-            className="lg:text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent"
-          >
+          <NavLink className="lg:text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
             Hero Store
           </NavLink>
         </div>
