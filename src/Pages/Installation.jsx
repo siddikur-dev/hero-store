@@ -6,9 +6,15 @@ import useApps from "../hooks/useApps";
 import InstallationApps from "./InstallationApps";
 import { getStoredInstalledApps, removeInstalledLS } from "../Utility/AddToLS";
 import loaderImg from "../assets/logo.png";
+import appErrorImage from "../assets/App-Error.png";
 import ImageLoader from "../Components/ImageLoader";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router";
+import Button from "../Components/Button/Button";
 const Installation = () => {
+  // Navigate to all apps
+  const navigate = useNavigate();
+
   const { apps, loading } = useApps();
   //state set installedApps Data
   const [installedApps, setInstalledApps] = useState([]);
@@ -53,6 +59,7 @@ const Installation = () => {
       </div>
     );
   }
+
   return (
     <div className="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-12">
       <Helmet>
@@ -102,15 +109,30 @@ const Installation = () => {
         </div>
 
         {/* App List */}
-        <div className="space-y-4">
-          {installedApps.map((app) => (
-            <InstallationApps
-              handleUninstallApp={handleUninstallApp}
-              key={app.id}
-              app={app}
+        {installedApps.length === 0 ? (
+          // Show not found if no apps match search
+          <div className="my-12 space-y-7">
+            <img
+              className="mx-auto w-[350px]"
+              src={appErrorImage}
+              alt="appErrorImage"
             />
-          ))}
-        </div>
+            <div className="text-center space-y-7">
+              <h1 className="font-bold text-4xl">Oops, app not found!</h1>
+              <Button onClick={() => navigate("/")}>Go Home!</Button>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {installedApps.map((app) => (
+              <InstallationApps
+                handleUninstallApp={handleUninstallApp}
+                key={app.id}
+                app={app}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
